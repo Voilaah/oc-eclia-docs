@@ -7,7 +7,7 @@ next: /getting-started/installation.html
 
 > Marketplace solution for Arcadier and October CMS
 
-This is the official documentation website for the [oc-eclia plugin](https://app-voilaah.site/all-in-one-mkt/) for Arcadier and October CMS.
+This is the official documentation website for the [All-in-One Marketplace](https://app-voilaah.site/all-in-one-mkt/) for Arcadier and October CMS.
 
 You can help us to improve the documentation by clicking on the "Help us" link at the bottom of each page.
 
@@ -15,7 +15,7 @@ You can help us to improve the documentation by clicking on the "Help us" link a
 
 ## Demo
 
-You can find a demo of this plugin on [mall.offline.swiss](https://mall.offline.swiss).
+You can find a demo of this plugin on [app-voilaah.site/eclia](https://app-voilaah.site/eclia).
 
 ## Requirements
 
@@ -25,6 +25,4 @@ You can find a demo of this plugin on [mall.offline.swiss](https://mall.offline.
 
 ## Links
 
-* [GitHub](https://github.com/OFFLINE-GmbH/oc-mall-plugin)
-* [October Marketplace](https://octobercms.com/plugin/offline-mall)
-* [Demo Theme](https://github.com/OFFLINE-GmbH/oc-mall-theme)
+* [Demo Theme](https://app-voilaah.site/eclia)
