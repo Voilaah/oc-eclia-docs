@@ -1,6 +1,5 @@
 # Content
 
-<a name="introduction"></a>
 ## Introduction
 
 This documentation is describing a sub-part of the Eclia RESTFUL API as a proxy for Arcadier API v2.
@@ -12,7 +11,7 @@ No admin token coming from the Arcadier APi will sent over as a basic security p
 
 > All the provided API endpoints will require the client ID and client Secret coming from the Arcadier Marketplace.
 
-<a name="getting-started"></a>
+
 ## Getting Started
 
 All your request must included the clientId and clientSecret
@@ -27,10 +26,9 @@ All your request must included the clientId and clientSecret
 
 
 
-<a name="quick-reference"></a>
 ## Quick reference
 
-> Available endpoints list: (Last updated 25th August 2019)
+> Available endpoints list: (Last updated 7th Feb 2020)
 
 
 | Done | Verb  | Path                                                        | Description  | Arcadier API v2 correspondance
@@ -52,5 +50,5 @@ All your request must included the clientId and clientSecret
 |[x]| POST   | `/api/eclia/apply-discount`                                | (@Deprecated in favor of `/api/eclia/cart/apply-discount-code`) Check whether the current user can apply a discount or not | na
 |[-]| POST   | `/api/eclia/cart/apply-discount`                                | Check whether the current user can apply a discount or not | na
 |[-]| POST   | `/api/eclia/cart/apply-discount-code`                                | Check whether the current user can apply a discount Code or not | na
-|[x]| POST   | `/api/eclia/item/{itemId}`                                | Update an item (product or variant). Reduce the stock qty by the passed value | na
+|[-]| POST   | `/api/eclia/cart/complete-order`                                | Notify Eclia that an order has been complete by a customer | na
 

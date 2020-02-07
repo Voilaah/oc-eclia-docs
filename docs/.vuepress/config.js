@@ -11,13 +11,13 @@ module.exports = {
             {
                 title: 'Installation',
                 children: [
-                    '/getting-started/content',
+                    '/getting-started/content'
                 ]
             },
             {
                 title: 'CMS API',
                 children: [
-                    '/cms-api/index'
+                    '/cms-api/data'
                 ]
             },
             {
@@ -26,48 +26,19 @@ module.exports = {
                     '/api/user-accounts',
                     '/api/discounts',
                     '/api/cart',
-                    '/api/invoice',
-                    // '/components/products',
-                    // '/components/products-filter',
-                    // '/components/product-reviews',
-                    // '/components/cart',
-                    // '/components/discount-applier',
-                    // '/components/checkout',
-                    // '/components/signup',
-                    // '/components/wishlists',
-                    // '/components/wishlist-button',
-                    // '/components/payment-method-selector',
-                    // '/components/shipping-method-selector',
-                    // '/components/address-selector',
-                    // '/components/my-account',
-                    // '/components/orders-list',
-                    // '/components/address-form',
-                    // '/components/currency-picker',
-                    // '/components/customer-profile',
-                    // '/components/address-list',
+                    '/api/invoice'
                 ]
             },
             {
                 title: 'Guidelines',
                 children: [
-                    '/development/guidelines',
-                    // '/development/product-model',
-                    // '/development/variant-model',
-                    // '/development/order-model',
-                    // '/development/cart-model',
-                    // '/development/wishlist-model',
-                    // '/development/payment-providers',
-                    // '/development/pricing-information',
-                    // '/development/events',
-                    // '/development/pdf',
-                    // '/development/integration',
-                    // '/development/console-commands',
+                    '/development/guidelines'
                 ]
             },
             {
                 title: 'Changelog',
                 children: [
-                    '/changelog/1.1.0',
+                    '/changelog/1.1.0'
                 ]
             }
         ],
