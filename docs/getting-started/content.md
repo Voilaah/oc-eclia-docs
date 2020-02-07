@@ -31,8 +31,8 @@ All your request must included the clientId and clientSecret
 > Available endpoints list: (Last updated 7th Feb 2020)
 
 
-| Done | Verb  | Path                                                        | Description  | Arcadier API v2 correspondance
-|-|-------|--------------------------------------------------------------------|------|
+| Done | Verb  | Path                                                               | Description   | Arcadier API v2 correspondance    |
+|------|-------|--------------------------------------------------------------------|-------------- | --------------------------------- |
 |[x]| GET   | `/api/arcadier/ping`                                | testing the API |
 |[x]| POST   | `/api/arcadier/signup`                                | Register a new buyer user | `https://{marketplace}.arcadier.io/api/v2/accounts/register`
 |[x]| POST   | `/api/arcadier/signin`                                | Login a buyer user | `https://{marketplace}.arcadier.io/token`
