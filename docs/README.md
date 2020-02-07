@@ -3,7 +3,7 @@ prev: false
 next: /getting-started/installation.html
 ---
 
-# oc-eclia
+# All-in-One Marketplace
 
 > Marketplace solution for Arcadier and October CMS
 
@@ -11,7 +11,7 @@ This is the official documentation website for the [All-in-One Marketplace](http
 
 You can help us to improve the documentation by clicking on the "Help us" link at the bottom of each page.
 
-[Let's get started!](/getting-started/installation.md)
+[Let's get started!](/getting-started/content.md)
 
 ## Demo
 
