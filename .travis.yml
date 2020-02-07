@@ -1,6 +1,6 @@
 language: node_js
 node_js:
-  - lts/*
+  - "10"
 install:
   - npm install -g vuepress
 script:
@@ -9,15 +9,15 @@ script:
 cache:
   directories:
     - "node_modules"
-  notifications:
-    email: false
+notifications:
+  email: false
 deploy:
   provider: pages
   skip_cleanup: true
   local_dir: docs/.vuepress/dist
   github_token: $GITHUB_TOKEN # A token generated on GitHub allowing Travis to push code on you repository. Set in the Travis settings page of your repository, as a secure variable
   repo: voilaah/oc-eclia-docs
-  keep_history: false
-  target-branch: gh-pages
+  keep_history: true
+  target-branch: master
   on:
     branch: master
