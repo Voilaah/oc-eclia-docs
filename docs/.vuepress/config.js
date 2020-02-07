@@ -1,5 +1,5 @@
 module.exports = {
-    base: '/oc-eclia-plugin/',
+    base: '/voilaah/oc-eclia-docs/',
     title: 'oc-eclia',
     description: 'Marketplace solution for Arcadier and October CMS',
     markdown: {
