@@ -3,9 +3,9 @@ prev: false
 next: /getting-started/installation.html
 ---
 
-# oc-mall
+# oc-eclia
 
-> E-commerce solution for October CMS
+> Marketplace solution for Arcadier and October CMS
 
 This is the official documentation website for the [oc-mall plugin](https://github.com/OFFLINE-GmbH/oc-mall-plugin) for October CMS.
 
@@ -25,6 +25,6 @@ You can find a demo of this plugin on [mall.offline.swiss](https://mall.offline.
 
 ## Links
 
-* [GitHub](https://github.com/OFFLINE-GmbH/oc-mall-plugin) 
+* [GitHub](https://github.com/OFFLINE-GmbH/oc-mall-plugin)
 * [October Marketplace](https://octobercms.com/plugin/offline-mall)
-* [Demo Theme](https://github.com/OFFLINE-GmbH/oc-mall-theme) 
+* [Demo Theme](https://github.com/OFFLINE-GmbH/oc-mall-theme)
