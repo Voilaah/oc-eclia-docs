@@ -7,7 +7,7 @@ next: /getting-started/installation.html
 
 > Marketplace solution for Arcadier and October CMS
 
-This is the official documentation website for the [oc-mall plugin](https://github.com/OFFLINE-GmbH/oc-mall-plugin) for October CMS.
+This is the official documentation website for the [oc-eclia plugin](https://app-voilaah.site/all-in-one-mkt/) for Arcadier and October CMS.
 
 You can help us to improve the documentation by clicking on the "Help us" link at the bottom of each page.
 
