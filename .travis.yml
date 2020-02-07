@@ -1,6 +1,6 @@
 language: node_js
 node_js:
-  - "10"
+  - lts/*
 install:
   - npm install -g vuepress
 script:
@@ -18,6 +18,6 @@ deploy:
   github_token: $GITHUB_TOKEN # A token generated on GitHub allowing Travis to push code on you repository. Set in the Travis settings page of your repository, as a secure variable
   repo: voilaah/oc-eclia-docs
   keep_history: true
-  target-branch: master
   on:
     branch: master
+
