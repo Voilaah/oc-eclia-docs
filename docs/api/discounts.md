@@ -1,9 +1,8 @@
 # Discounts
 
-<a name="cms-discounts"></a>
-### CMS Discounts Data API
+## Active Discounts
 
-## Get the list of available and active discounts. Any past or future discount is ignored in this list.
+Get the list of available and active discounts. Any past or future discount is ignored in this list.
 
 
 ~~`(GET) /api/eclia/coupons`~~ is NOW *DEPRECATED*
@@ -28,11 +27,7 @@ They are *3 rules to apply a discount*:
 
 > Request
 
-(GET) /api/eclia/discounts
-```
- {
- }
-```
+`(GET) /api/eclia/discounts`
 
  > Basic structure of the Response
 

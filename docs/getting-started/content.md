@@ -46,9 +46,8 @@ All your request must included the clientId and clientSecret
 |[x]| GET   | `/api/eclia/index`                                | Get the necessary data to display the homepage defined in the CMS settings **UPDATED 10/09/2019** | na
 |[x]| GET   | ~~`/api/eclia/coupons`~~                                | Get the list of available coupons | na
 |[x]| GET   | `/api/eclia/discounts`                                | Get the list of available and active discounts | na
-|[x]| POST   | `/api/eclia/apply-discount`                                | Check whether the current user can apply a discount or not | na
 |[x]| POST   | `/api/eclia/apply-discount`                                | (@Deprecated in favor of `/api/eclia/cart/apply-discount-code`) Check whether the current user can apply a discount or not | na
-|[-]| POST   | `/api/eclia/cart/apply-discount`                                | Check whether the current user can apply a discount or not | na
+|[-]| POST   | `/api/eclia/cart/apply-discount`                                | Check whether the current cart can apply any active discount or not | na
 |[-]| POST   | `/api/eclia/cart/apply-discount-code`                                | Check whether the current user can apply a discount Code or not | na
 |[-]| POST   | `/api/eclia/cart/complete-order`                                | Notify Eclia that an order has been complete by a customer | na
 

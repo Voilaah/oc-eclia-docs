@@ -1,12 +1,8 @@
-# Buyer accounts
+# Accounts
 
+## Buyer
 
-
-<a name="buyer-endpoints"></a>
-## Buyer API Endpoints
-
-<a name="buyer-signup"></a>
-### Buyer user registration
+### Registration
 
 `(POST) /api/arcadier/signup`
 
@@ -58,8 +54,7 @@ na
 
 
 
-<a name="buyer-login"></a>
-### Buyer user authentication with login/password
+### Authentication
 
 `(POST) /api/arcadier/signin`
 
@@ -170,9 +165,7 @@ This examples should return a buyer token.
 
 
 
-
-<a name="buyer-logout"></a>
-## Logout a buyer user
+### Logout
 
 `(GET) /api/arcadier/logout`
 
@@ -211,8 +204,7 @@ This examples should return a buyer token.
 na
 
 
-<a name="buyer-password"></a>
-## Reset buyer user password
+### Reset password
 
 `(POST) /api/arcadier/password/{buyerId}`
 
@@ -225,8 +217,8 @@ na
 
 
 
-<a name="buyer-account"></a>
-## Update a buyer user account
+
+### Update a buyer account
 
 `(POST) /api/arcadier/users/{buyerId}`
 or

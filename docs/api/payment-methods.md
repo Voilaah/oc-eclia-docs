@@ -1,8 +1,5 @@
 # Payment methods
 
-
-<a name="marketplace-payment-gateways"></a>
-### Payment Gateways API
 ## Get the marketplace level payment gateways list.
 
 `(GET) /api/arcadier/payment-gateways`

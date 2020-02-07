@@ -1,9 +1,6 @@
 # cart
 
-
-
-<a name="buyer-cart"></a>
-## Get a buyer user cart
+## Get a buyer cart
 
 `(GET) /api/arcadier/carts/50c4bd2c-bfbc-4681-ad9b-651e63731d79`
 
@@ -142,110 +139,17 @@ Get the cart for the buyer user `chris31@voilaah.com`
 
 
 
----
-<a name="cms-apply-discount"></a>
-### CMS Apply Discount API (@deprecated)
-
-**@deprecated** in favor of the  <a href="#cms-cart-apply-discount-code">api here</a>.
-
-_**Requires authentication**_
-
-Check and Return whether a user can apply a discount can be applied on the
 
 
-`(POST) /api/eclia/apply-discount`
-
-> Request details
-
-| Param        | Description                     | Type | Rules |
-|--------------|-------------------------------------------------------------------|
-| **userId**    | user ID (Arcadier GUID)                                      |string | required |
-| **discountCode** | discount Code (must be of a type trigger="code")                                   | string | required |
-
-
-> Request
-
-(POST) /api/eclia/apply-discount
-```
-{
-    "userId": "9bef05e1-aaf8-4f70-86a7-9576f359125c",
-    "discountCode": "MOGOTG500KOFF",
-
-}
-```
-
-
- > Response
-
-```
-(CODE: 200)
-{
-    "version": "v1",
-    "resource": "cart",
-    "status": "success",
-    "data": {
-        "result": true,
-        "mode": "check",
-        "message": "discount code can be applied by the user."
-    }
-}
-```
-
-```
-(CODE: 200)
-{
-    "version": "v1",
-    "resource": "cart",
-    "status": "success",
-    "data": {
-        "result": true,
-        "mode": "apply",
-        "message": "discount code has been successfully counted as applied by the user."
-    }
-}
-```
-
-
- > Error Response
-
-```
-(CODE: 404)
-{
-    "version": "v1",
-    "resource": "cart",
-    "status": "success",
-    "data": {
-        "result": false,
-        "mode": "check",
-        "message": "This discount code is not valid." /* "message": "This promo code has expired. You already used this code." */
-    }
-}
-```
-
-```
-(CODE: 404)
-{
-    "version": "v1",
-    "resource": "cart",
-    "status": "success",
-    "data": {
-        "result": false,
-        "mode": "apply",
-        "message": "You can use the same promo code only once."
-    }
-}
-```
-
-
----
-<a name="cms-cart-apply-discount"></a>
-### CMS Cart Apply Discount API
+### Apply Discount
 
 _**Requires authentication**_
 
 Updated version of the apply-discount API.
 
 Check and Return whether a discount can be applied on the cart (other than a discount code).
+
+> This API shoul dbe called whilst displaying a cart or the final checkout page.
 
 Please see the other <a href="#cms-cart-apply-discount-code">API for the discounts Code</a>.
 
@@ -318,16 +222,14 @@ Please see the other <a href="#cms-cart-apply-discount-code">API for the discoun
 }
 ```
 
----
-<a name="cms-cart-apply-discount-code"></a>
-### CMS Cart Apply Discount Code API
+### Cart Apply Discount Code
 
 _**Requires authentication**_
 
-Updated version of the apply-discount-code API.
-
-
 Check and Return whether a user can apply a discount code.
+
+> Should be called when the buyer is entering a discount code in the cart
+
 
 Please see the other <a href="#cms-cart-apply-discount">API for the other discounts</a>.
 
@@ -414,15 +316,13 @@ You still have to notify the CMS if it has been applied at the end of the checko
 ```
 
 
----
-<a name="cms-cart-apply-complete-order"></a>
-### CMS Cart Complete Order API
+### Complete Order
 
 _**Requires authentication**_
 
-Updated version of the apply-discount-code API.
-
 Notify the CMS of the order complete by the user so that the CMS can eventually update product stock, discounts usage, ...
+
+> Should be called upon a successful purchase with the Arcadier Invoie and Orders informations
 
 
 
@@ -439,7 +339,8 @@ Notify the CMS of the order complete by the user so that the CMS can eventually 
 
 > Request
 
-(POST) /api/eclia/cart/complete-order
+`(POST) /api/eclia/cart/complete-order`
+
 ```
 {
     "invoiceNo": "9bef05e1-aaf8-4f70-86a7-9576f359125c",

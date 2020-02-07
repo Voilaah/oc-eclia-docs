@@ -1,12 +1,5 @@
 # Shipping Methods
 
-
-<a name="marketplace-endpoints"></a>
-# Marketplace API Endpoints
-
-<a name="marketplace-shipping-methods"></a>
-### Shipping Methods API
-
 ## Get the marketplace level shipping methods list.
 
 `(GET) /api/arcadier/shipping-methods`

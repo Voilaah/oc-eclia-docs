@@ -1,9 +1,6 @@
 # Invoice / Orders
 
-
-
-<a name="buyer-invoice"></a>
-### Invoice API
+## Update Invoice
 
 Used to update the payment status of an invoice.
 
@@ -49,8 +46,7 @@ Note:
 }
 ```
 
-<a name="buyer-order"></a>
-### Order API
+### Update Order API
 
 
 Used to update the status of an order.
@@ -121,7 +117,6 @@ Wrapper for Aracadier API v2 *Post Checkout - Edit Order Details (Admin Auth)*:
 
 
 
-<a name="buyer-email"></a>
 ### Send Invoice Email API to consumer
 
 Used to send the invoice email to the consumer after fully checkout.

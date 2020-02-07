@@ -1,12 +1,7 @@
-# Index Data
-
-
 # CMS API Endpoints
 
+## CMS Index Data API
 
-### CMS Index Data API
-
-## Get the data required to display a Homepage.
 
 `(GET) /api/eclia/index`
 
@@ -17,10 +12,6 @@ it returns also some web url available to use in a Webview for the mobile.
 > Request
 
 (GET) /api/eclia/index
-```
- {
- }
-```
 
  > Basic structure of the Response
 
