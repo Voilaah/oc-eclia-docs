@@ -1,7 +1,7 @@
 module.exports = {
     base: '/oc-eclia-docs/',
-    title: 'oc-eclia',
-    description: 'Marketplace solution for Arcadier and October CMS',
+    title: 'All-in-One Marketplace',
+    description: 'All-in-One Marketplace solution for Arcadier and October CMS',
     markdown: {
         lineNumbers: true,
         anchor: {permalink: true, permalinkBefore: true, permalinkSymbol: '#'}
@@ -21,7 +21,7 @@ module.exports = {
                 ]
             },
             {
-                title: 'Marketplace API',
+                title: 'API',
                 children: [
                     '/api/user-accounts',
                     '/api/discounts',
@@ -30,9 +30,15 @@ module.exports = {
                 ]
             },
             {
-                title: 'Guidelines',
+                title: 'API Guidelines',
                 children: [
                     '/development/guidelines'
+                ]
+            },
+            {
+                title: 'Webhooks',
+                children: [
+                    '/marketplace-webhooks/content'
                 ]
             },
             {
