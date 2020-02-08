@@ -1,7 +1,6 @@
 # API Usage Guidelines
 
-<a name="api-usage-guidelines"></a>
-## API Usage Guidelines
+## Buyer journey
 
 **Based on a typical user journey**
 
