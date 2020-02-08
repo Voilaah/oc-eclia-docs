@@ -39,7 +39,7 @@ module.exports = {
             {
                 title: 'Webhooks',
                 children: [
-                    '/marketplace-webhooks/content'
+                    '/webhooks/content'
                 ]
             },
             {
