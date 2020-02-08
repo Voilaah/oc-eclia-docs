@@ -19,7 +19,7 @@
 > Request details
 
 | Param        | Description                     | Type | Rules |
-|--------------|-------------------------------------------------------------------|
+|--------------|-------------------------------------------------------------------|---|---|
 | **email**    | Email of the account                                      |string | email, required |
 | **password** | Password of the account                                    | string | required |
 | **password_confirmation** | Confirmation Password of the account, must be equal to password parameter | string | required |
