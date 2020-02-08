@@ -24,7 +24,7 @@ Get the cart for the buyer user `chris31@voilaah.com`
 **Query Request Details:**
 
 | Param        | Description        | Type | Rules |
-|--------------|-------------------------------------------------------------------|
+|--------------|-------------------------------------------------------------------|----|----|
 | **token**    | Value of the token    | string | required |
 | **buyerId**    | Value of the user Id    | string | required |
 
@@ -159,7 +159,7 @@ Please see the other <a href="#cms-cart-apply-discount-code">API for the discoun
 > Request details
 
 | Param        | Description                     | Type | Rules |
-|--------------|-------------------------------------------------------------------|
+|--------------|-------------------------------------------------------------------|----|----|
 | **userId**    | user ID (Arcadier GUID)                                      |string | required |
 | **discountId** | discount Id (can be any discount type)                                   | string | required |
 
@@ -242,7 +242,7 @@ You still have to notify the CMS if it has been applied at the end of the checko
 > Request details
 
 | Param        | Description                     | Type | Rules |
-|--------------|-------------------------------------------------------------------|
+|--------------|-------------------------------------------------------------------|---|---|
 | **userId**    | user ID (Arcadier GUID)                                      |string | required |
 | **discountCode** | discount Code (must be of a type trigger="code")                                   | string | required |
 
@@ -331,7 +331,7 @@ Notify the CMS of the order complete by the user so that the CMS can eventually 
 > Request details
 
 | Param        | Description                     | Type | Rules |
-|--------------|-------------------------------------------------------------------|
+|--------------|-------------------------------------------------------------------|-----|-----|
 | **invoiceNo**    | Arcadier Invoice No                                      |string | required |
 | **userId**    | user ID (Arcadier GUID)                                      |string | required |
 | **discounts** | array of discounts Id                                   | string | required |

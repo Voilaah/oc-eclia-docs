@@ -26,7 +26,7 @@ The `Users` custom fields code are:
 **Request Details:**
 
 | Param        | Description        | Type | Rules |
-|--------------|-------------------------------------------------------------------|
+|--------------|-------------------------------------------------------------------|----|----|
 | **token**    |  Value of the buyer token   | string | required |
 | **Email**    | Email of the buyer account      | string | optional |
 | **FirstName** | FirstName of the buyer account       | string | optional |
