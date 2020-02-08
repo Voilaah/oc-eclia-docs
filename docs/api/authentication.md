@@ -66,7 +66,7 @@ na
 > Request details:
 
 | Params       | Description               | Type | Rules |
-|--------------|-------------------------------------------------------------------|
+|--------------|-------------------------------------------------------------------|----|----|
 | **username**    | Username of the buyer account      |string | required |
 | **password** | Password of the buyer account       |string | required |
 
@@ -174,7 +174,7 @@ This examples should return a buyer token.
 **Request Details:**
 
 | Param        | Description        | Type | Rules |
-|--------------|-------------------------------------------------------------------|
+|--------------|-------------------------------------------------------------------|----|----|
 | **token**    | Value of the token    | string | required |
 
 > Request
