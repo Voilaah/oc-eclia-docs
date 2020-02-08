@@ -1,4 +1,4 @@
-# cart
+# Cart
 
 ## Get a buyer cart
 
