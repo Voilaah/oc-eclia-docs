@@ -23,7 +23,8 @@ module.exports = {
             {
                 title: 'API',
                 children: [
-                    '/api/user-accounts',
+                    '/api/authentication',
+                    '/api/accounts',
                     '/api/discounts',
                     '/api/cart',
                     '/api/invoice'
