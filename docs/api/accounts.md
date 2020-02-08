@@ -1,7 +1,6 @@
 # Accounts
 
-
-
+## Buyer
 
 ### Update a buyer account
 
