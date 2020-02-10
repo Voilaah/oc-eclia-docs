@@ -145,7 +145,7 @@ Notify the CMS of the order completion by the buyer so that the CMS can eventual
 
 > Request
 
-`(POST) /api/eclia/cart/complete-order`
+`(POST) /api/eclia/order/complete`
 
 ```
 {

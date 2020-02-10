@@ -16,7 +16,7 @@
 | Display Cart page             |                       na                  |     na                                                                     |
 | Action 'Checkout'             |                                           |   na                                                                       |
 | Display Checkout page         |                       na                  |  na                                                                        |
-| Action 'Place Order'          |                                           |   `(POST) /api/eclia/invoice`  <br/>`(POST) /api/eclia/order`  <br/>`(POST) /api/eclia/cart/complete-order/{invoiceId}`  <br/>`(GET) /api/arcadier/email/{invoiceId}`  <br/>                         |
+| Action 'Place Order'          |                                           |   `(POST) /api/eclia/invoice`  <br/>`(POST) /api/eclia/order`  <br/>`(POST) /api/eclia/order/complete/{invoiceId}`  <br/>`(GET) /api/arcadier/email/{invoiceId}`  <br/>                         |
 | Display Login                 | - is user login?                          |                        na                                                     |
 | Action 'Login'                | check required fields                     |    `(POST) /api/arcadier/signin`                                              |
 | Action 'Logout'               | - is user login?                          |     `(GET) /api/arcadier/logout`                                              |
