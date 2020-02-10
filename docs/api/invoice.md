@@ -159,17 +159,17 @@ Notify the CMS of the order completion by the buyer so that the CMS can eventual
                 "id": "98765fg-aaf8-4f70-86a7-9576f359125c",
                 "cartItemId": "5454f52-aaf8-4f70-86a7-9576f359125c",
                 "deliveryAddressId": "df24ff2f-aaf8-4f70-86a7-9576f359125c",
-                "shippingId": "abcdef-aaf8-4f70-86a7-9576f359125c"
-                "qty": 2,
+                "shippingId": "abcdef-aaf8-4f70-86a7-9576f359125c",
+                "qty": 2
             },
             {
                 "id": "3565rg6-aaf8-4f70-86a7-9576f359125c",
                 "cartItemId": "ds4154f-aaf8-4f70-86a7-9576f359125c",
                 "deliveryAddressId": "35fds66-aaf8-4f70-86a7-9576f359125c",
-                "shippingId": "abcdef-aaf8-4f70-86a7-9576f359125c"
-                "qty": 1,
-            },
-        ]
+                "shippingId": "abcdef-aaf8-4f70-86a7-9576f359125c",
+                "qty": 1
+            }
+        ],
         "appliedDiscounts": [
             "1",
             "15"
