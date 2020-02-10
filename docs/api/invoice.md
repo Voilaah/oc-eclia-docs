@@ -131,7 +131,7 @@ Notify the CMS of the order completion by the buyer so that the CMS can eventual
 
 
 
-`(POST) /api/eclia/cart/complete-order/{invoiceId}`
+`(POST) /api/eclia/order/complete/{invoiceId}`
 
 > Request details
 
