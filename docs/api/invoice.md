@@ -149,29 +149,32 @@ Notify the CMS of the order completion by the buyer so that the CMS can eventual
 
 ```
 {
-    "invoiceId": "MOGOZAY212399",
-    "userId": "9bef05e1-aaf8-4f70-86a7-9576f359125c",
-    "deliveryNotes": "my phone number is 1122334455",
-    "purchasedItems": [
-        {
-            "id": "98765fg-aaf8-4f70-86a7-9576f359125c",
-            "cartItemId": "5454f52-aaf8-4f70-86a7-9576f359125c",
-            "deliveryAddressId": "df24ff2f-aaf8-4f70-86a7-9576f359125c",
-            "shippingId": "abcdef-aaf8-4f70-86a7-9576f359125c"
-            "qty": 2,
-        },
-        {
-            "id": "3565rg6-aaf8-4f70-86a7-9576f359125c",
-            "cartItemId": "ds4154f-aaf8-4f70-86a7-9576f359125c",
-            "deliveryAddressId": "35fds66-aaf8-4f70-86a7-9576f359125c",
-            "shippingId": "abcdef-aaf8-4f70-86a7-9576f359125c"
-            "qty": 1,
-        },
-    ]
-    "appliedDiscounts": [
-        "1",
-        "15"
-    ]
+    "token" : "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOjEsImlzcyI6Imh0dHA6Ly9sb2NhbGhvc3Qvdm9pbGFhaC9zY2hlZHVsZXIvcHJvamVjdC9hcGkvYXV0aC9nZW5lcmF0ZV90b2tlbiIsImlhdCI6MTUzNDgzNzQyNCwiZXhwIjoxNTM0ODQ0NjI0LCJuYmYiOjE1MzQ4Mzc0MjQsImp0aSI6InhMNFJQMnpBd1MwTDZzVDgifQ.TsM3r14zt3ElV8hE9CGVzL5Lwi6FCIa9ceAxC7-rFC0",
+    "data" : {
+        "invoiceId": "000000000000",
+        "userId": "9bef05e1-aaf8-4f70-86a7-9576f359125c",
+        "deliveryNotes": "my phone number is 1122334455",
+        "purchasedItems": [
+            {
+                "id": "98765fg-aaf8-4f70-86a7-9576f359125c",
+                "cartItemId": "5454f52-aaf8-4f70-86a7-9576f359125c",
+                "deliveryAddressId": "df24ff2f-aaf8-4f70-86a7-9576f359125c",
+                "shippingId": "abcdef-aaf8-4f70-86a7-9576f359125c"
+                "qty": 2,
+            },
+            {
+                "id": "3565rg6-aaf8-4f70-86a7-9576f359125c",
+                "cartItemId": "ds4154f-aaf8-4f70-86a7-9576f359125c",
+                "deliveryAddressId": "35fds66-aaf8-4f70-86a7-9576f359125c",
+                "shippingId": "abcdef-aaf8-4f70-86a7-9576f359125c"
+                "qty": 1,
+            },
+        ]
+        "appliedDiscounts": [
+            "1",
+            "15"
+        ]
+    }
 }
 ```
 
