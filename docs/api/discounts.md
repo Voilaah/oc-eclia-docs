@@ -4,26 +4,21 @@
 
 Get the list of available and active discounts. Any past or future discount is ignored in this list.
 
-
 ~~`(GET) /api/eclia/coupons`~~ is NOW *DEPRECATED*
-
-*NEW ENDPOINT*
 
 `(GET) /api/eclia/discounts`
 
-
-> **Description**: Return the set up discounts in the CMS.
-
+::: tip
 They are *3 types of discount*:
 - Fixed amount ("type": "fixed_amount")
 - a rate ("type": "rate")
 - Alternate Shipping amount ("type": "shipping")
 
 They are *3 rules to apply a discount*:
-- order total reach a value (trigger="total")
-- discount code (trigger="code")
-- specific product ID (trigger="product")
-
+- order total reach a value (trigger="total") => this discount has to be automatically aplied on the cart items if the condfition is true
+- discount code (trigger="code") => manual applicaiton by the buyer
+- specific product ID (trigger="product")  => this discount has to be automatically aplied on the cart items if the condfition is true
+:::
 
 > Request
 
@@ -279,3 +274,177 @@ They are *3 rules to apply a discount*:
     ]
 }
 ```
+
+
+
+## Applying a discount
+
+_**Requires authentication**_
+
+Check and Return whether a discount can be applied on the cart (other than a discount code).
+This API should be called everytime an item is added to the cart and a potential discount can be applied on the cart.
+
+Please see the other <a href="#apply-discount-code">API for the discounts Code</a>.
+
+
+`(POST) /api/eclia/cart/apply-discount`
+
+> Request details
+
+| Param        | Description                     | Type | Rules |
+|--------------|-------------------------------------------------------------------|----|----|
+| **userId**    | user ID (Arcadier GUID)                                      |string | required |
+| **discountId** | discount Id (can be any discount type)                                   | string | required |
+
+
+
+> Request
+
+`(POST) /api/eclia/cart/apply-discount`
+```
+{
+    "userId": "9bef05e1-aaf8-4f70-86a7-9576f359125c",
+    "discountId": "1"
+}
+```
+
+
+ > Response
+
+```
+(CODE: 200)
+{
+    "version": "v1",
+    "resource": "cart",
+    "status": "success",
+    "data": {
+        "result": true,
+        "message": "discount id can be applied by the user."
+    }
+}
+```
+
+
+ > Error Response
+
+```
+(CODE: 404)
+{
+    "version": "v1",
+    "resource": "cart",
+    "status": "success",
+    "data": {
+        "result": false,
+        "mode": "check",
+        "message": "This discount id is not valid."
+    }
+}
+```
+
+```
+(CODE: 404)
+{
+    "version": "v1",
+    "resource": "cart",
+    "status": "success",
+    "data": {
+        "result": false,
+        "mode": "apply",
+        "message": "You can use the same discount only once."
+    }
+}
+```
+
+## Applying a discount code
+
+_**Requires authentication**_
+
+Check and Return whether a user can apply a discount code.
+
+> Should be called when the buyer is entering a discount code in the cart
+
+
+Please see the other <a href="#apply-a-discount">API for the other discounts</a>.
+
+You still have to notify the CMS if it has been applied at the end of the checkout by usong the <a href="#cms-cart-complete-order">Complete Order API</a>
+
+
+
+`(POST) /api/eclia/cart/apply-discount-code`
+
+> Request details
+
+| Param             | Description                                       | Type      | Rules     |
+|-------------------|---------------------------------------------------|-----------|-----------|
+| **userId**        | user ID (Arcadier GUID)                           |string     | required  |
+| **discountCode**  | discount Code (must be of a type trigger="code")  | string    | required  |
+
+
+> Request
+
+`(POST) /api/eclia/cart/apply-discount-code`
+```
+{
+    "userId": "9bef05e1-aaf8-4f70-86a7-9576f359125c",
+    "discountCode": "MOGOTG500KOFF"
+}
+```
+
+
+ > Response
+
+```
+(CODE: 200)
+{
+    "version": "v1",
+    "resource": "cart",
+    "status": "success",
+    "data": {
+        "result": true,
+        "message": "discount code can be applied by the user."
+    }
+}
+```
+
+```
+(CODE: 200)
+{
+    "version": "v1",
+    "resource": "cart",
+    "status": "success",
+    "data": {
+        "result": true,
+        "message": "discount code has been successfully counted as applied by the user."
+    }
+}
+```
+
+
+ > Error Response
+
+```
+(CODE: 404)
+{
+    "version": "v1",
+    "resource": "cart",
+    "status": "success",
+    "data": {
+        "result": false,
+        "message": "This discount code is not valid." /* "message": "This promo code has expired. You already used this code." */
+    }
+}
+```
+
+```
+(CODE: 404)
+{
+    "version": "v1",
+    "resource": "cart",
+    "status": "success",
+    "data": {
+        "result": false,
+        "message": "You can use the same promo code only once."
+    }
+}
+```
+

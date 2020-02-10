@@ -2,14 +2,12 @@
 
 ## Update Invoice
 
-Used to update the payment status of an invoice.
-
 `(POST) /api/arcadier/invoice/{invoiceId}`
 or
 `(PUT) /api/arcadier/invoice/{invoiceId}`
 
-
-Wrapper for Aracadier API v2 *Post-Checkout - Update payments for Invoice Number*:
+Used to update the payment status of an invoice in Arcadier System.
+This API is a Wrapper for Aracadier API v2 *Post-Checkout - Update payments for Invoice Number*:
 
 `https://{your-marketplace}.arcadier.io/api/v2/admins/{adminID}/invoices/{invoiceID}`
 
@@ -46,14 +44,12 @@ Note:
 }
 ```
 
-### Update Order API
-
-
-Used to update the status of an order.
+## Update Order
 
 `(POST) /api/arcadier/order`
 
-Wrapper for Aracadier API v2 *Post Checkout - Edit Order Details (Admin Auth)*:
+Used to update the status of an order in Arcadier System.
+Thjis is a Wrapper for Aracadier API v2 *Post Checkout - Edit Order Details (Admin Auth)*:
 
 `https://{your-marketplace}.arcadier.io/api/v2/admins/{adminID}/orders`
 
@@ -61,7 +57,8 @@ Wrapper for Aracadier API v2 *Post Checkout - Edit Order Details (Admin Auth)*:
 
 
 **Note**:
-- the attributes `DiscountAmount` and `Freight` must be filled in only for the first order of the array.
+- the attribute `DiscountAmount` must be filled in only for the first order of the array.
+- the attribute `Freight` must be filled for every order of the array.
 - also note the presence of the custom field `OrderDeliveryNotes`
 - for offline payment, data should be send as:
 
@@ -117,9 +114,87 @@ Wrapper for Aracadier API v2 *Post Checkout - Edit Order Details (Admin Auth)*:
 
 
 
-### Send Invoice Email API to consumer
+## Send Invoice Email
 
 Used to send the invoice email to the consumer after fully checkout.
 
 `(GET) /api/arcadier/email/{invoiceId}`
 
+
+## Completing an Order
+
+_**Requires authentication**_
+
+Notify the CMS of the order completion by the buyer so that the CMS can eventually update product stock, discounts usage, ...
+
+> Should be called upon a successful purchase with the Arcadier Invoice and Orders informations
+
+
+
+`(POST) /api/eclia/cart/complete-order`
+
+> Request details
+
+| Param                 | Description                       | Type      | Rules     |
+|-----------------------|-----------------------------------|-----------|-----------|
+| **invoiceNo**         | Arcadier Invoice No               | string    | required  |
+| **userId**            | user ID (Arcadier GUID)           | string    | required  |
+| **purchasedItems**    | array of purchased items          | array     | required  |
+| **appliedDiscounts**  | array of applied discounts Id     | array     | required  |
+
+
+> Request
+
+`(POST) /api/eclia/cart/complete-order`
+
+```
+{
+    "invoiceNo": "MOGOZAY212399",
+    "userId": "9bef05e1-aaf8-4f70-86a7-9576f359125c",
+    "purchasedItems": [
+        {
+            "id": "9bef05e1-aaf8-4f70-86a7-9576f359125c",
+            "purchasedStock": 2
+        },
+        {
+            "id": "9bef05e1-aaf8-4f70-86a7-9576f359125c",
+            "purchasedStock": 1
+        },
+    ]
+    "appliedDiscounts": [
+        "1",
+        "15"
+    ]
+}
+```
+
+
+ > Response
+
+```
+(CODE: 200)
+{
+    "version": "v1",
+    "resource": "cart",
+    "status": "success",
+    "data": {
+        "result": true,
+        "message": "Thank you"
+    }
+}
+```
+
+ > Error Response
+
+```
+(CODE: 400)
+{
+    "version": "v1",
+    "resource": "cart",
+    "status": "success",
+    "data": {
+        "result": false,
+        "message": "A specific error message."
+    }
+}
+```

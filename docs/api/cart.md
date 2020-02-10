@@ -7,10 +7,10 @@
 
 > **Description**: Return the cart details of a buyer ID whether he is signed in or not. The cart details consist of an array of `cart item ID`. Arcadier API v2 does not manage any `cart ID`.
 
-**Note**: For now, Arcadier API v2 does not support a cart for a guest / anonymous user
-
-**Note**: A buyer user cart never expires.
-
+::: tip
+For now, Arcadier API v2 does not support a cart for a guest / anonymous user
+A buyer user cart never expires.
+:::
 
 
 > Testing purpose
@@ -23,20 +23,16 @@ Get the cart for the buyer user `chris31@voilaah.com`
 
 **Query Request Details:**
 
-| Param        | Description        | Type | Rules |
-|--------------|-------------------------------------------------------------------|----|----|
-| **token**    | Value of the token    | string | required |
-| **buyerId**    | Value of the user Id    | string | required |
+| Param         | Description                   | Type      | Rules     |
+|---------------|------------------------------ |-----------|-----------|
+| **token**     | Value of the token            | string    | required  |
+| **buyerId**   | Value of the user Id          | string    | required  |
 
 
 
 > Request
 
-(GET) /api/arcadier/carts/{buyerId}
-```
- {
- }
-```
+`(GET) /api/arcadier/carts/{buyerId}`
 
  > Response
 
@@ -139,235 +135,3 @@ Get the cart for the buyer user `chris31@voilaah.com`
 
 
 
-
-
-### Apply Discount
-
-_**Requires authentication**_
-
-Updated version of the apply-discount API.
-
-Check and Return whether a discount can be applied on the cart (other than a discount code).
-
-> This API shoul dbe called whilst displaying a cart or the final checkout page.
-
-Please see the other <a href="#cms-cart-apply-discount-code">API for the discounts Code</a>.
-
-
-`(POST) /api/eclia/cart/apply-discount`
-
-> Request details
-
-| Param        | Description                     | Type | Rules |
-|--------------|-------------------------------------------------------------------|----|----|
-| **userId**    | user ID (Arcadier GUID)                                      |string | required |
-| **discountId** | discount Id (can be any discount type)                                   | string | required |
-
-
-
-> Request
-
-(POST) /api/eclia/cart/apply-discount
-```
-{
-    "userId": "9bef05e1-aaf8-4f70-86a7-9576f359125c",
-    "discountId": "1"
-}
-```
-
-
- > Response
-
-```
-(CODE: 200)
-{
-    "version": "v1",
-    "resource": "cart",
-    "status": "success",
-    "data": {
-        "result": true,
-        "message": "discount id can be applied by the user."
-    }
-}
-```
-
-
- > Error Response
-
-```
-(CODE: 404)
-{
-    "version": "v1",
-    "resource": "cart",
-    "status": "success",
-    "data": {
-        "result": false,
-        "mode": "check",
-        "message": "This discount id is not valid."
-    }
-}
-```
-
-```
-(CODE: 404)
-{
-    "version": "v1",
-    "resource": "cart",
-    "status": "success",
-    "data": {
-        "result": false,
-        "mode": "apply",
-        "message": "You can use the same discount only once."
-    }
-}
-```
-
-### Cart Apply Discount Code
-
-_**Requires authentication**_
-
-Check and Return whether a user can apply a discount code.
-
-> Should be called when the buyer is entering a discount code in the cart
-
-
-Please see the other <a href="#cms-cart-apply-discount">API for the other discounts</a>.
-
-You still have to notify the CMS if it has been applied at the end of the checkout by usong the <a href="#cms-cart-complete-order">Complete Order API</a>
-
-
-
-`(POST) /api/eclia/cart/apply-discount-code`
-
-> Request details
-
-| Param        | Description                     | Type | Rules |
-|--------------|-------------------------------------------------------------------|---|---|
-| **userId**    | user ID (Arcadier GUID)                                      |string | required |
-| **discountCode** | discount Code (must be of a type trigger="code")                                   | string | required |
-
-
-> Request
-
-(POST) /api/eclia/cart/apply-discount-code
-```
-{
-    "userId": "9bef05e1-aaf8-4f70-86a7-9576f359125c",
-    "discountCode": "MOGOTG500KOFF"
-}
-```
-
-
- > Response
-
-```
-(CODE: 200)
-{
-    "version": "v1",
-    "resource": "cart",
-    "status": "success",
-    "data": {
-        "result": true,
-        "message": "discount code can be applied by the user."
-    }
-}
-```
-
-```
-(CODE: 200)
-{
-    "version": "v1",
-    "resource": "cart",
-    "status": "success",
-    "data": {
-        "result": true,
-        "message": "discount code has been successfully counted as applied by the user."
-    }
-}
-```
-
-
- > Error Response
-
-```
-(CODE: 404)
-{
-    "version": "v1",
-    "resource": "cart",
-    "status": "success",
-    "data": {
-        "result": false,
-        "message": "This discount code is not valid." /* "message": "This promo code has expired. You already used this code." */
-    }
-}
-```
-
-```
-(CODE: 404)
-{
-    "version": "v1",
-    "resource": "cart",
-    "status": "success",
-    "data": {
-        "result": false,
-        "message": "You can use the same promo code only once."
-    }
-}
-```
-
-
-### Complete Order
-
-_**Requires authentication**_
-
-Notify the CMS of the order complete by the user so that the CMS can eventually update product stock, discounts usage, ...
-
-> Should be called upon a successful purchase with the Arcadier Invoie and Orders informations
-
-
-
-`(POST) /api/eclia/cart/complete-order`
-
-> Request details
-
-| Param        | Description                     | Type | Rules |
-|--------------|-------------------------------------------------------------------|-----|-----|
-| **invoiceNo**    | Arcadier Invoice No                                      |string | required |
-| **userId**    | user ID (Arcadier GUID)                                      |string | required |
-| **discounts** | array of discounts Id                                   | string | required |
-
-
-> Request
-
-`(POST) /api/eclia/cart/complete-order`
-
-```
-{
-    "invoiceNo": "9bef05e1-aaf8-4f70-86a7-9576f359125c",
-    "userId": "9bef05e1-aaf8-4f70-86a7-9576f359125c",
-    "item": {
-        "id": "9bef05e1-aaf8-4f70-86a7-9576f359125c",
-        "purchasedStock": 2
-    },
-    "discounts": [
-        "1",
-        "15"
-    ]
-}
-```
-
-
- > Response
-
-```
-(CODE: 200)
-{
-    "version": "v1",
-    "resource": "cart",
-    "status": "success",
-    "data": {
-        "result": true,
-        "message": "discount code can be applied by the user."
-    }
-}
-```
