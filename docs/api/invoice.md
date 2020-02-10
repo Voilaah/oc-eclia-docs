@@ -131,13 +131,13 @@ Notify the CMS of the order completion by the buyer so that the CMS can eventual
 
 
 
-`(POST) /api/eclia/cart/complete-order`
+`(POST) /api/eclia/cart/complete-order/{invoiceId}`
 
 > Request details
 
 | Param                 | Description                       | Type      | Rules     |
 |-----------------------|-----------------------------------|-----------|-----------|
-| **invoiceNo**         | Arcadier Invoice No               | string    | required  |
+| **invoiceId**         | Arcadier Invoice No               | string    | required  |
 | **userId**            | user ID (Arcadier GUID)           | string    | required  |
 | **purchasedItems**    | array of purchased items          | array     | required  |
 | **appliedDiscounts**  | array of applied discounts Id     | array     | required  |
@@ -149,7 +149,7 @@ Notify the CMS of the order completion by the buyer so that the CMS can eventual
 
 ```
 {
-    "invoiceNo": "MOGOZAY212399",
+    "invoiceId": "MOGOZAY212399",
     "userId": "9bef05e1-aaf8-4f70-86a7-9576f359125c",
     "deliveryNotes": "my phone number is 1122334455",
     "purchasedItems": [
