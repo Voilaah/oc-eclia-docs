@@ -18,7 +18,10 @@ They are *3 rules to apply a discount*:
 - order total reach a value (trigger="total") => this discount has to be automatically aplied on the cart items if the condfition is true
 - discount code (trigger="code") => manual applicaiton by the buyer
 - specific product ID (trigger="product")  => this discount has to be automatically aplied on the cart items if the condfition is true
+- specific product ID (trigger="product")  => there are 2 attributes holding the product ID impacted by this discount: "product_external_id" is related to Arcadier, and "product_id" related to the CMS
 :::
+
+
 
 > Request
 
@@ -177,6 +180,7 @@ They are *3 rules to apply a discount*:
             "name": "Free Delivery Nation Wide",
             "code": null,
             "product_id": 3271,
+            "product_external_id": "000000-000000-000000",
             "type": "shipping",
             "trigger": "product",
             "rate": null,
