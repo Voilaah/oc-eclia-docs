@@ -14,7 +14,7 @@ This API is a Wrapper for Aracadier API v2 *Post-Checkout - Update payments for 
 *As such, the payload need to be the exact payload expected by Arcadier API*
 
 Note:
-- for offline payment, data should be send as:
+- for offline payment, data order should be send as:
 
 ```
     "PaymentStatus": "Waiting For Payment",
@@ -92,7 +92,7 @@ Thjis is a Wrapper for Aracadier API v2 *Post Checkout - Edit Order Details (Adm
         {
             "ID": "00000000-0000-0000-0000-000000000000",
             "FulfilmentStatus": "Created",
-            "PaymentStatus": "stWaiting For Payment",
+            "PaymentStatus": "Waiting For Payment",
             "CartItemType": "delivery",
             "DiscountAmount": 0,
             "Freight": 0,
