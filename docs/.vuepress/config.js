@@ -27,7 +27,8 @@ module.exports = {
                     '/api/accounts',
                     '/api/discounts',
                     '/api/cart',
-                    '/api/invoice'
+                    '/api/invoices',
+                    '/api/orders'
                 ]
             },
             {
