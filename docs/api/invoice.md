@@ -24,23 +24,41 @@ Note:
 ```
 {
     "token" : "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOjEsImlzcyI6Imh0dHA6Ly9sb2NhbGhvc3Qvdm9pbGFhaC9zY2hlZHVsZXIvcHJvamVjdC9hcGkvYXV0aC9nZW5lcmF0ZV90b2tlbiIsImlhdCI6MTUzNDgzNzQyNCwiZXhwIjoxNTM0ODQ0NjI0LCJuYmYiOjE1MzQ4Mzc0MjQsImp0aSI6InhMNFJQMnpBd1MwTDZzVDgifQ.TsM3r14zt3ElV8hE9CGVzL5Lwi6FCIa9ceAxC7-rFC0",
-    "data" : {
-        "InvoiceNo": "000000000000",
-        "Payee": {
-          "ID": "00000000-0000-0000-0000-000000000000"
+    "data" : [
+        {
+            "InvoiceNo": "000000000000",
+            "Payee": {
+              "ID": "00000000-0000-0000-0000-000000000000"
+            },
+            "Payer": {
+              "ID": "00000000-0000-0000-0000-000000000000"
+            },
+            "Order": {
+              "ID": "00000000-0000-0000-0000-000000000000"
+            },
+            "Status": "Waiting For Payment",
+            "Gateway": {
+              "Code": "string"
+            },
+            "DateTimePaid": 0
+        },{
+            "InvoiceNo": "000000000000",
+            "Payee": {
+              "ID": "00000000-0000-0000-0000-000000000000"
+            },
+            "Payer": {
+              "ID": "00000000-0000-0000-0000-000000000000"
+            },
+            "Order": {
+              "ID": "00000000-0000-0000-0000-000000000000"
+            },
+            "Status": "Waiting For Payment",
+            "Gateway": {
+              "Code": "string"
+            },
+            "DateTimePaid": 0
         },
-        "Payer": {
-          "ID": "00000000-0000-0000-0000-000000000000"
-        },
-        "Order": {
-          "ID": "00000000-0000-0000-0000-000000000000"
-        },
-        "Status": "Waiting For Payment",
-        "Gateway": {
-          "Code": "string"
-        },
-        "DateTimePaid": 0
-    }
+    ]
 }
 ```
 
