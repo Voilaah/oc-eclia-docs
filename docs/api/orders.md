@@ -106,6 +106,7 @@ Notify the CMS of the order completion by the buyer so that the CMS can eventual
         "deliveryNotes": "my phone number is 1122334455",
         "purchasedItems": [
             {
+                "parentItemId": "00000000-0000-0000-0000-000000000000",
                 "id": "98765fg-aaf8-4f70-86a7-9576f359125c",
                 "cartItemId": "5454f52-aaf8-4f70-86a7-9576f359125c",
                 "deliveryAddressId": "df24ff2f-aaf8-4f70-86a7-9576f359125c",
@@ -113,6 +114,7 @@ Notify the CMS of the order completion by the buyer so that the CMS can eventual
                 "qty": 2
             },
             {
+                "parentItemId": "00000000-0000-0000-0000-000000000000",
                 "id": "3565rg6-aaf8-4f70-86a7-9576f359125c",
                 "cartItemId": "ds4154f-aaf8-4f70-86a7-9576f359125c",
                 "deliveryAddressId": "35fds66-aaf8-4f70-86a7-9576f359125c",
